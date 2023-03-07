@@ -108,20 +108,33 @@
 
 #--------------------------
 #6 Zigzag sort problem
-def zigZag(numbers):
-    zigZagList = []
-    bigToSmall = numbers.sort(reverse=True)
-    listLength = len(numbers)
-    largeNumberIndex = 0
-    smallNumberIndex = len(numbers)-1
-    for i in range(len(numbers)):
-        if (i%2) == 0:
-            zigZagList.append(numbers[smallNumberIndex])
-            smallNumberIndex -=1
-        else:
-            zigZagList.append(numbers[largeNumberIndex])
-            largeNumberIndex +=1
-    return zigZagList
+# def zigZag(numbers):
+#     zigZagList = []
+#     bigToSmall = numbers.sort(reverse=True)
+#     listLength = len(numbers)
+#     largeNumberIndex = 0
+#     smallNumberIndex = len(numbers)-1
+#     for i in range(len(numbers)):
+#         if (i%2) == 0:
+#             zigZagList.append(numbers[smallNumberIndex])
+#             smallNumberIndex -=1
+#         else:
+#             zigZagList.append(numbers[largeNumberIndex])
+#             largeNumberIndex +=1
+#     return zigZagList
 
-numbers = [3, 1, 3, 1, 2, 4]
-print(zigZag(numbers))
+# numbers = [3, 1, 3, 1, 2, 4]
+# print(zigZag(numbers))
+
+#--------------------------
+#7 Merge two sorted lists
+
+def mergeTwoLists(list1,list2):
+    mergedList = list1 + list2
+    mergedList.sort()
+    return mergedList
+
+list1 = []
+list2 = [0]
+
+print(mergeTwoLists(list1, list2))
