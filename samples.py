@@ -127,14 +127,30 @@
 # print(zigZag(numbers))
 
 #--------------------------
-#7 Merge two sorted lists
+# #7 Merge two sorted lists
 
-def mergeTwoLists(list1,list2):
-    mergedList = list1 + list2
-    mergedList.sort()
-    return mergedList
+# def mergeTwoLists(list1,list2):
+#     mergedList = list1 + list2
+#     mergedList.sort()
+#     return mergedList
 
-list1 = []
-list2 = [0]
+# list1 = []
+# list2 = [0]
 
-print(mergeTwoLists(list1, list2))
+# print(mergeTwoLists(list1, list2))
+
+#--------------------------
+# #8 reverse a linked list
+#solved in leetcode, copied and pasted code here.
+def reverseList(head):
+    prev = None
+    current = head
+
+    while current:
+        temp = current.next
+        current.next = prev
+        prev = current
+        current = temp
+    return prev
+
+print(reverseList([1,2]))
