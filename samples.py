@@ -142,15 +142,42 @@
 #--------------------------
 # #8 reverse a linked list
 #solved in leetcode, copied and pasted code here.
-def reverseList(head):
-    prev = None
-    current = head
+# def reverseList(head):
+#     prev = None
+#     current = head
 
-    while current:
-        temp = current.next
-        current.next = prev
-        prev = current
-        current = temp
-    return prev
+#     while current:
+#         temp = current.next
+#         current.next = prev
+#         prev = current
+#         current = temp
+#     return prev
 
-print(reverseList([1,2]))
+# print(reverseList([1,2]))
+
+#-----------------------
+#121 leet code, bes time to buy and sell stock
+#success
+
+#for i in range(0, n-2):
+#         for j in range(i+1, n-1):
+#             for k in range(j+1,n):
+def maxProfit(prices,n):
+    highestProfit = []
+    for i in range(n):
+        for j in range(i+1,n):
+            if prices[i] > prices[j]:
+                continue
+            else:
+                currentProfit = prices[j] - prices[i]
+                highestProfit.append(currentProfit)
+    if len(highestProfit) > 0:
+        return max(highestProfit)
+    else:
+        return 0
+
+
+
+prices = [7,1,1,1,1,1]
+n = len(prices)
+print(maxProfit(prices,n))
